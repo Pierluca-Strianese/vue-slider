@@ -12,18 +12,19 @@
     <div id="container">
 		<div class="carousel">
 			<div class="highlighted">
-				
+				<img v-for="image in images" :src="image.image" alt="" class="active">
 			</div>
 
 			<div class="thumbs">
 				<i class="controls_up bi bi-arrow-up-circle-fill btn btn-prev"></i>
 				<i class="controls_down bi bi-arrow-down-circle-fill btn btn-next"></i>
+				<img v-for="image in images" :src="image.image" alt="" class="active">
 			</div>
 		</div>
 	</div>
 	
 	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-	<script src="JS/main.js"></script>
-    <!-- <script src="JS/script.js"></script> -->
+	<!-- <script src="JS/main.js"></script> -->
+    <script src="JS/script.js"></script>
 </body>
 </html>
