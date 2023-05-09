@@ -50,8 +50,30 @@ const app = Vue.createApp ({
         setActiveIndex(i) {
             this.activeIndex = i;
         },
+
+        toggleAutorun() {
+            this.isAutorun = !this.isAutorun;
+            this.runSlider();
+        },
+
+        runSlider() {
+            if (this.isAutorun) {
+                this.idAutorun = setInterval(
+                    () => this.sliderDirection == 1 ? this.showNextSlide() : this.showPrevSlide(),  this.autorunTime);
+            } else {
+                clearInterval(this.idAutorun);
+            }
+        },
+
+        invertSliderDirection() {
+            this.sliderDirection *= -1;
+        },
+    },
+
+    mounted() {
+        this.runSlider();
     },
 
 });
 
-app.mount ('#root');
+app.mount ('.container');

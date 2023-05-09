@@ -44,6 +44,11 @@
 					>
 				</div>
 			</div>
+
+		</div>
+		<div class="btn-container">
+			<button class="btn" @click="toggleAutorun">{{ isAutorun ? 'STOP' : 'RUN' }}</button>
+			<button class="btn" @click="invertSliderDirection">Invert</button>
 		</div>
 	</div>
 	

@@ -97,3 +97,15 @@
 	filter: brightness(1);
 	border: 5px solid lightgrey;
 }
+
+.btn-container {
+	position: absolute;
+	top: 80%;
+	left: 45%;
+}
+
+.btn-container .btn {
+	display: inline-block;
+	margin-right:  2rem;
+	padding: .5rem;
+}
