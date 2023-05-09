@@ -11,7 +11,7 @@
 <body>
     <div class="container">
 		<div class="carousel" id="root">
-			<div class="highlighted">
+			<div class="highlighted" @mouseover="stopAutorun" @mouseout="runSlider">
 				<div 
 					v-for="(slide, i) in arrImages"
 					class="slide" 

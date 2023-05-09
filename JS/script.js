@@ -65,8 +65,21 @@ const app = Vue.createApp ({
             }
         },
 
+        runSlider() {
+            if (this.isAutorun) {
+                this.idAutorun = setInterval(
+                    () => this.sliderDirection == 1 ? this.showNextSlide() : this.showPrevSlide(),  this.autorunTime);
+            } else {
+                clearInterval(this.idAutorun);
+            }
+        },
+
         invertSliderDirection() {
             this.sliderDirection *= -1;
+        },
+
+        stopAutorun() {
+            clearInterval(this.idAutorun);
         },
     },
 
