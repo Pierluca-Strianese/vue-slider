@@ -46,6 +46,10 @@ const app = Vue.createApp ({
                 this.activeIndex = this.arrImages.length - 1;
             }
         },
+
+        setActiveIndex(i) {
+            this.activeIndex = i;
+        },
     },
 
 });
