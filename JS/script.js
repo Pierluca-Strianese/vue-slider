@@ -53,7 +53,6 @@ const app = Vue.createApp ({
 
         toggleAutorun() {
             this.isAutorun = !this.isAutorun;
-            this.runSlider();
         },
 
         runSlider() {
@@ -80,6 +79,12 @@ const app = Vue.createApp ({
 
         stopAutorun() {
             clearInterval(this.idAutorun);
+        },
+    },
+
+    watch: {
+        isAutorun(){
+            this.runSlider();
         },
     },
 
