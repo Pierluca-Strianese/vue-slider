@@ -33,7 +33,19 @@ const app = Vue.createApp ({
         }
     },
     methods: {
-
+        showNextSlide() {
+            this.activeIndex++;
+            if (this.activeIndex >= this.arrImages.length) {
+                this.activeIndex = 0;
+            }
+        },
+        
+        showPrevSlide() {
+            this.activeIndex--;
+            if (this.activeIndex < 0) {
+                this.activeIndex = this.arrImages.length - 1;
+            }
+        },
     },
 
 });

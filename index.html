@@ -26,8 +26,14 @@
 			</div>
 
 			<div class="thumbs">
-				<i class="bi bi-arrow-up-circle-fill btn btn-prev"></i>
-				<i class="bi bi-arrow-down-circle-fill btn btn-next"></i>
+				<i 
+					class="bi bi-arrow-up-circle-fill btn btn-prev"
+					@click="showPrevSlide"
+				></i>
+				<i 
+					class="bi bi-arrow-down-circle-fill btn btn-next"
+					@click="showNextSlide"
+				></i>
 				<div class="thumbs-imgs">
 					<img 
 						v-for="(slide, i) in arrImages" 
