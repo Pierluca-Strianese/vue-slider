@@ -9,22 +9,39 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div id="container">
-		<div class="carousel">
+    <div class="container">
+		<div class="carousel" id="root">
 			<div class="highlighted">
-				<img v-for="image in images" :src="image.image" alt="" class="active">
+				<div 
+					v-for="(slide, i) in arrImages"
+					class="slide" 
+					:class="{active: i== activeIndex}"
+				>
+					<img :src="slide.image" :alt="slide.title">
+					<div class="contents">
+						<h2>{{ slide.title }}</h2>
+						<p>{{ slide.text }}</p>
+					</div>
+				</div>
 			</div>
 
 			<div class="thumbs">
-				<i class="controls_up bi bi-arrow-up-circle-fill btn btn-prev"></i>
-				<i class="controls_down bi bi-arrow-down-circle-fill btn btn-next"></i>
-				<img v-for="image in images" :src="image.image" alt="" class="active">
+				<i class="bi bi-arrow-up-circle-fill btn btn-prev"></i>
+				<i class="bi bi-arrow-down-circle-fill btn btn-next"></i>
+				<div class="thumbs-imgs">
+					<img 
+						v-for="(slide, i) in arrImages" 
+						:src="slide.image" 
+						alt="" 
+						:class="{active: i== activeIndex}"
+					>
+				</div>
 			</div>
 		</div>
 	</div>
 	
 	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-	<!-- <script src="JS/main.js"></script> -->
     <script src="JS/script.js"></script>
+	<!-- <script src="JS/main.js"></script> -->
 </body>
 </html>

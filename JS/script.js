@@ -2,7 +2,12 @@ const app = Vue.createApp ({
 
     data (){
         return {
-            images :[
+            activeIndex: 0,
+            sliderDirection: 1,
+            isAutorun: true,
+            autorunTime: 2000,
+            idAutorun: null,
+            arrImages :[
                 {
                     image: 'img/01.webp',
                     title: 'Marvel\'s Spiderman Miles Morale',
@@ -33,4 +38,4 @@ const app = Vue.createApp ({
 
 });
 
-app.mount ('#container');
+app.mount ('#root');
